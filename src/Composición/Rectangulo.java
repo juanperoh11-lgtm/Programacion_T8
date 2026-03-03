@@ -21,8 +21,25 @@ public class Rectangulo {
         this.a = new Punto(x1, y1);
         this.b = new Punto(x2, y2);
     }
+    
 
-    // Calcula el área usando el valor absoluto de la diferencia de coordenadas
+    public Punto getA() {
+		return a;
+	}
+
+	public void setA(Punto a) {
+		this.a = a;
+	}
+
+	public Punto getB() {
+		return b;
+	}
+
+	public void setB(Punto b) {
+		this.b = b;
+	}
+
+	// Calcula el área usando el valor absoluto de la diferencia de coordenadas
     public int calculaAreal() {
         return Math.abs(this.b.getX() - this.a.getX()) * Math.abs(this.b.getY() - this.a.getY());
     }
