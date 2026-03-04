@@ -4,7 +4,11 @@ public class Persona {
 	
 //En caso de no hacer operaciones con numeros estos se ponen como string entre doble comillas
 	// Atributos privados para cumplir con el principio de encapsulamiento.
-    private String nombre, dni, telefono, dirección;
+    protected String nombre, dni, telefono, dirección;
+    
+    public static String dato() {
+    	return "Soy una persona";
+    }
 
     /**
      * Constructor por defecto.
@@ -86,8 +90,8 @@ public class Persona {
      */
     @Override
     public String toString() {
-        return "Persona [nombre=" + nombre + ", dni=" + dni + 
-               ", telefono=" + telefono + ", dirección=" + dirección + "]";
+        return "Persona nombre=" + nombre + ", dni=" + dni + 
+               ", telefono=" + telefono + ", dirección=" + dirección ;
     }
 
     /**

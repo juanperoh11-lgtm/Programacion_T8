@@ -39,5 +39,27 @@ public class Main {
 		if (p1.equals(p11)) {
 			System.out.println("p1 y p11 se consideran la misma persona (mismo DNI)");
 		}
+		
+		
+		
+		/**
+		 * Tercera clase T8 de programción
+		 */
+		
+		Estudiante e1 = new Estudiante("Juan", "333k", "35935", "C/H", "EXP-001", "DAM", "1º", 8.5);
+		System.out.println(e1);
+		
+		
+		// Como esta declarado como estudiante llama al toString de estudiante
+		Persona p4 = new Estudiante("Manu", "666k" + "35935", "C/z" + "8989564" + "DAM" + "1º" + 6.5);
+		System.out.println(p4);
+		//En este caso como es contructur es estatico muestra la frase de la clase persona
+		System.out.println(p4.dato());
+		
+		String[] modulosPedro = {"Dam", "Daug"};
+		Profesor pr1 = new Profesor("Pedro", "777k", "600112233", "Calle Falsa 123", "35855",           // codProfesor
+		        "Informática", "Mañana", modulosPedro );
+		System.out.println(pr1.toString());
+		
 	}
 }
