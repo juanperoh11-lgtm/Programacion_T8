@@ -1,78 +1,114 @@
 package Herencia;
 
 public class Profesor extends Persona {
-	
-	private String codProfesor, Departamento, Horario;
-	private  Modulos listaModulos;
-	
-	public Profesor(String nombre, String dni, String telefono, String direccion, String codProfesor,
-	        String Departamento, String Horario, String modulos[]) {
-	    super(nombre, dni, telefono, direccion);
-	    this.codProfesor = codProfesor;
-	    this.Departamento = Departamento;
-	    this.Horario = Horario;
-	    
-	    // Solución: Inicializamos y asignamos el array que recibimos por parámetro
-	    this.listaModulos = new Modulos();
-	    this.listaModulos.modulo = modulos; 
-	}
-	
-	
+
+	private String codigoProfesor, departamento, horario;
+	private String modulos[];
+
 	/**
-	 * @return the codProfesor
+	 * 
+	 * @param nombre
+	 * @param dni
+	 * @param telefono
+	 * @param direccion
+	 * @param codigoProfesor
+	 * @param departamento
+	 * @param horario
+	 * @param modulos
 	 */
-	public String getCodProfesor() {
-		return codProfesor;
+
+	public Profesor(String nombre, String dni, String telefono, String direccion, String codigoProfesor,
+			String departamento, String horario, String[] modulos) {
+		super(nombre, dni, telefono, direccion);
+		this.codigoProfesor = codigoProfesor;
+		this.departamento = departamento;
+		this.horario = horario;
+		this.modulos = modulos;
 	}
+
 	/**
-	 * @param codProfesor the codProfesor to set
+	 * @return the codigoProfesor
 	 */
-	public void setCodProfesor(String codProfesor) {
-		this.codProfesor = codProfesor;
+	public String getCodigoProfesor() {
+		return codigoProfesor;
 	}
+
+	/**
+	 * @param codigoProfesor the codigoProfesor to set
+	 */
+	public void setCodigoProfesor(String codigoProfesor) {
+		this.codigoProfesor = codigoProfesor;
+	}
+
 	/**
 	 * @return the departamento
 	 */
 	public String getDepartamento() {
-		return Departamento;
+		return departamento;
 	}
+
 	/**
 	 * @param departamento the departamento to set
 	 */
 	public void setDepartamento(String departamento) {
-		Departamento = departamento;
+		this.departamento = departamento;
 	}
+
 	/**
 	 * @return the horario
 	 */
 	public String getHorario() {
-		return Horario;
+		return horario;
 	}
+
 	/**
 	 * @param horario the horario to set
 	 */
 	public void setHorario(String horario) {
-		Horario = horario;
-	}
-	/**
-	 * @return the modulos
-	 */
-	public Modulos getModulos() {
-	    return listaModulos;
+		this.horario = horario;
 	}
 
 	/**
-	 * @param listaModulos el objeto Modulos a asignar
+	 * @return the modulos
 	 */
-	public void setModulos(Modulos listaModulos) {
-	    this.listaModulos = listaModulos; // Antes tenías un error de asignación aquí
+	public String[] getModulos() {
+		return modulos;
 	}
-	
+
+	/**
+	 * @param modulos the modulos to set
+	 */
+	public void setModulos(String[] modulos) {
+		this.modulos = modulos;
+	}
+
+	// programacion BD SI
+	private String dameModulos() {
+		String m = "";
+		for (String s : this.modulos)
+			m += s + " ";
+		return m;
+	}
+
 	@Override
 	public String toString() {
-	    // Usamos el atributo de la clase (this.listaModulos) en lugar de crear uno nuevo
-	    return super.toString() + " Codigo Profesor: " + codProfesor + " Departamento: " + Departamento +
-	           " Horario: " + Horario + " Modulos: " + java.util.Arrays.toString(this.listaModulos.modulo);
+
+		String datosPersona = super.toString();
+		return datosPersona + " código " + this.codigoProfesor + " departamento: " + this.departamento + " horario: "
+				+ this.horario + " módulos que imparte: " + this.dameModulos();
 	}
+
 	
+
+	// 2 profesores son iguales sí el Nombre, dni y departamento iguales
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Persona))
+			return false;
+
+		Profesor pr = (Profesor) obj;
+		return this.dni.equals(pr.dni) && this.nombre.equals(pr.nombre) && this.dameModulos().equals(pr.dameModulos());
+
+	}
+
 }

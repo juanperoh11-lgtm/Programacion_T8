@@ -57,9 +57,16 @@ public class Main {
 		System.out.println(p4.dato());
 		
 		String[] modulosPedro = {"Dam", "Daug"};
-		Profesor pr1 = new Profesor("Pedro", "777k", "600112233", "Calle Falsa 123", "35855",           // codProfesor
+		Profesor pr1 = new Profesor("Pedro", "777k", "600112233", "Calle Falsa 123", "35855",        
 		        "Informática", "Mañana", modulosPedro );
 		System.out.println(pr1.toString());
 		
+		Profesor pr2 = new Profesor("Pedro", "777k", "600112233", "Calle Falsa 123", "35855",           
+		        "Informática", "Mañana", modulosPedro );
+		System.out.println("----------------------------------------------------------------------------------");
+		
+		if (pr1.equals(pr2)) {
+			System.out.println("Son iguales");
+		}
 	}
 }
