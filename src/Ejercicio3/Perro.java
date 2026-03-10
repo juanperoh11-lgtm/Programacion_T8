@@ -25,5 +25,6 @@ public class Perro extends Mascota {
             textoPulgas = "No";
         }
         return super.toString() + " Raza: " + raza + "  Pulgas: " + textoPulgas;
+        // Tambien se puede poner: ((pulgas)?  "Sí" : "No tine") en lugar del if
     }
 }
