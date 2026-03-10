@@ -1,6 +1,6 @@
 package Ejercicio3;
 
-public class Loro extends Mascotas {
+public class Loro extends Mascota {
 	protected String nombre, fechaN;
 
 	private String origen;

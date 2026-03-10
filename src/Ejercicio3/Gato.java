@@ -1,6 +1,6 @@
 package Ejercicio3;
 
-public class Gato extends Mascotas {
+public class Gato extends Mascota {
 	private boolean peloLargo;
 	private String color;
 

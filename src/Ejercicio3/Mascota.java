@@ -1,9 +1,9 @@
 package Ejercicio3;
 
-public class Mascotas {
+public class Mascota {
 	protected String nombre, fechaN;
 
-	public Mascotas(String nombre, String fechaN) {
+	public Mascota(String nombre, String fechaN) {
 		this.nombre = nombre;
 		this.fechaN = fechaN;
 	}
