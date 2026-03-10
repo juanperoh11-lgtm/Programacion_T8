@@ -7,8 +7,28 @@ public class Revista extends Publicacion {
         super(codigo, titulo, anioPublicacion, numPaginas);
         this.numRevista = numRevista;
     }
+    
+    
+    
+    /**
+	 * @return the numRevista
+	 */
+	public int getNumRevista() {
+		return numRevista;
+	}
 
-    @Override
+
+
+	/**
+	 * @param numRevista the numRevista to set
+	 */
+	public void setNumRevista(int numRevista) {
+		this.numRevista = numRevista;
+	}
+
+
+
+	@Override
     public String toString() {
         return super.toString() + ", Número de revista: " + numRevista;
     }
