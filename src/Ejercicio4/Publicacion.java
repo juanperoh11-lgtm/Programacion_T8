@@ -1,19 +1,28 @@
 package Ejercicio4;
 
 public class Publicacion {
-	private String codigo;
+
 	private String titulo;
 	private int anioPublicacion;
 	private int numPaginas;
 
+	private int codigo;
+	// Estatico porque no es comun a todos
+	private static int contador = 1;
+
 	// Constructor común
-	public Publicacion(String codigo, String titulo, int anioPublicacion, int numPaginas) {
-		this.codigo = codigo;
+	public Publicacion(String titulo, int anioPublicacion, int numPaginas) {
 		this.titulo = titulo;
 		this.anioPublicacion = anioPublicacion;
 		this.numPaginas = numPaginas;
+
+		this.codigo = contador;
+		incrementarContador();
 	}
-	
+
+	public static void incrementarContador() {
+		contador++;
+	}
 
 	/**
 	 * @return the titulo
@@ -22,28 +31,12 @@ public class Publicacion {
 		return titulo;
 	}
 
-
-
-
 	/**
 	 * @param titulo the titulo to set
 	 */
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
-
-
-
-	/**
-	 * @param codigo the codigo to set
-	 */
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-
-
 
 	/**
 	 * @param anioPublicacion the anioPublicacion to set
@@ -52,9 +45,6 @@ public class Publicacion {
 		this.anioPublicacion = anioPublicacion;
 	}
 
-
-
-
 	/**
 	 * @param numPaginas the numPaginas to set
 	 */
@@ -62,14 +52,7 @@ public class Publicacion {
 		this.numPaginas = numPaginas;
 	}
 
-
-
-
-	// Métodos específicos 
-	public String getCodigo() {
-		return codigo;
-	}
-
+	// Métodos específicos
 	public int getAnioPublicacion() {
 		return anioPublicacion;
 	}

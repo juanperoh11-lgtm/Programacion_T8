@@ -3,8 +3,8 @@ package Ejercicio4;
 public class Revista extends Publicacion {
     private int numRevista;
 
-    public Revista(String codigo, String titulo, int anioPublicacion, int numPaginas, int numRevista) {
-        super(codigo, titulo, anioPublicacion, numPaginas);
+    public Revista(String titulo, int anioPublicacion, int numPaginas, int numRevista) {
+        super(titulo, anioPublicacion, numPaginas);
         this.numRevista = numRevista;
     }
     
