@@ -38,7 +38,7 @@ public class Electrodomestico {
 		comprobarColor(color);
 	}
 
-	// Gueters y setters
+	// Getters y setters
 	/**
 	 * @return the color
 	 */
@@ -95,9 +95,9 @@ public class Electrodomestico {
 		this.peso = peso;
 	}
 	
-	private void comprobarConsumoEnergetico(char ConsumoEner) {
-		if (ConsumoEner >= 'A' && ConsumoEner <= 'F') {
-			this.consumoEnergetico = ConsumoEner;
+	private void comprobarConsumoEnergetico(char letra) {
+		if (letra >= 'A' && letra <= 'F') {
+			this.consumoEnergetico = letra;
 		} else {
 			this.consumoEnergetico = CONSUMO_ENERGETICO;
 		}

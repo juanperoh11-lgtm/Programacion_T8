@@ -23,8 +23,8 @@ public class Television  extends Electrodomestico{
 		this.sintonizadorTDT = false;
 	}
 	
-	//Un constructor con la resolución, sintonizador TDT y el resto de atributos heredados.
-	//Recuerda que debes llamar al constructor de la clase padre.
+	//Un constructor con la resolución, sintonizador TDT y el resto de atributos heredados
+	//Recuerda que debes llamar al constructor de la clase padre
 	public Television(double precioBase, double peso, char consumoEnergetico, String color, double resolucion, boolean sintonizadorTDT) {
 		super(precioBase, peso, consumoEnergetico, color);
 		this.resolucion = resolucion;

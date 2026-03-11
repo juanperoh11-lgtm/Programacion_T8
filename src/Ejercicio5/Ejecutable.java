@@ -10,7 +10,7 @@ public class Ejecutable {
 		// Asigna a cada posición un objeto de las clases anteriores con los valores que
 		// desees.
 		lista[0] = new Lavadora(200, 50, 'A', "blanco", 40);
-		lista[1] = new Television(500, 30, 'B', "negro", 50, true);
+		lista[1] = new Television(500, 30, 'C', "negro", 50, true);
 		lista[2] = new Electrodomestico(150, 20, 'C', "azul");
 		// Usa carga por defecto (5kg)
 		lista[3] = new Lavadora(100, 10); 
