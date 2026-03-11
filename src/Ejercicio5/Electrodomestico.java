@@ -23,7 +23,7 @@ public class Electrodomestico {
 		this.color = COLOR;
 	}
 
-	// Constructor con el precio y peso. El resto por defecto.
+	// Constructor con el precio y peso. El resto por defecto
 	public Electrodomestico(double precioBase, double peso) {
 		this();
 		this.precioBase = precioBase;

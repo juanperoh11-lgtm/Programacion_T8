@@ -2,7 +2,7 @@ package Ejercicio5;
 
 public class Lavadora extends Electrodomestico {
 
-	// Por defecto la carga es de 5 kg. Usa una constante para ello.
+	// Por defecto la carga es de 5 kg. Usa una constante para ello
 	private final static double Carga = 5;
 	private double carga;
 

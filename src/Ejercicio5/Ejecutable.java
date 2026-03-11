@@ -4,7 +4,7 @@ public class Ejecutable {
 
 	public static void main(String[] args) {
 
-		// Crea un array de Electrodomesticos de 10 posiciones.
+		// Crea un array de Electrodomesticos de 10 posiciones
 		Electrodomestico lista[] = new Electrodomestico[10];
 
 		// Asigna a cada posición un objeto de las clases anteriores con los valores que

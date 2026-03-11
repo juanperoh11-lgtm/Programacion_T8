@@ -16,7 +16,7 @@ public class Television  extends Electrodomestico{
 		this.sintonizadorTDT = false;
 	}
 	
-	//Un constructor con el precio y peso. El resto por defecto.
+	//Un constructor con el precio y peso. El resto por defecto
 	public Television(double precioBase, double peso) {
 		super(precioBase, peso);
 		this.resolucion =20;
