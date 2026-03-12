@@ -1,7 +1,7 @@
 package Ejercicio5;
 
 public class Television  extends Electrodomestico{
-	private double resolucion;
+	private static  double resolucion;
 	private boolean sintonizadorTDT;
 	
 	

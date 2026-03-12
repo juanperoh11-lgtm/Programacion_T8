@@ -1,13 +1,12 @@
 package Ejercicio5;
 
 public class Electrodomestico {
-	// Por defecto, el color sera blanco, el consumo energético sera F, el
-	// precioBase es de
+	// Por defecto, el color sera blanco, el consumo energético sera F, el precioBase es de
 	// 100 € y el peso de 5 kg. Usa constantes para ello.
-	final static String COLOR = "blanco";
-	final static char CONSUMO_ENERGETICO = 'F';
-	final static double PRECIO = 100;
-	final static double PESO = 5;
+	private final static String COLOR = "blanco";
+	private final static char CONSUMO_ENERGETICO = 'F';
+	private final static double PRECIO = 100;
+	private final static double PESO = 5;
 
 	// Atributos del primer apartado
 	protected String color;
@@ -95,37 +94,44 @@ public class Electrodomestico {
 		this.peso = peso;
 	}
 	
-	private void comprobarConsumoEnergetico(char letra) {
-		if (letra >= 'A' && letra <= 'F') {
-			this.consumoEnergetico = letra;
-		} else {
-			this.consumoEnergetico = CONSUMO_ENERGETICO;
+	private char comprobarConsumoEnergetico(char letra) {
+		switch(letra) {
+			case 'A':
+			case 'B' :
+			case 'C':
+			case 'D':
+			case 'E':
+			case 'f':
+				return letra;
+				default:
+					return CONSUMO_ENERGETICO;
+				
 		}
 
 	}
 	
-	private void comprobarColor(String color) {
-        String colores[] = {"blanco", "negro", "rojo", "azul", "gris"};
-        boolean encontrado = false;
-        for (int i = 0; i < colores.length && !encontrado; i++) {
-            if (colores[i].equalsIgnoreCase(color)) {
-                encontrado = true;
-            }
+	
+	private String comprobarColor(String color) {
+        String c = color.toUpperCase(); 
+        switch (color) {
+        case "Blanco":
+        case "Negro":
+        case "Rojo":
+        case "Gris":
+        case "Azul":
+        	return color;
+        	default:
+        		return COLOR;
+        			
         }
-        //this.color = (encontrado) ? color : COLOR;
         
-         if (encontrado) {
-    		this.color = color;
-		} else {
-    		this.color = COLOR;
-		}
     }
 	
 	// Constructor del precio Final
 	public double precioFinal() {
 		//Variable para los incrementos
 		double plus = 0;
-		switch (consumoEnergetico) {
+		switch (this.consumoEnergetico) {
 		case 'A': plus += 100; break;
 		case 'B': plus += 80; break;
 		case 'C': plus += 60; break;
