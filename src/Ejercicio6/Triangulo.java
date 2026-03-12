@@ -1,7 +1,7 @@
 package Ejercicio6;
 
 public class Triangulo  extends Figura{
-
+	
 	@Override
 	public double calcularPerimetro() {
 		// TODO Auto-generated method stub
