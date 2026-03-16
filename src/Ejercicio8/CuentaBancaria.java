@@ -2,29 +2,29 @@ package Ejercicio8;
 
 public abstract class CuentaBancaria {
 
-	protected String iban;
+	private final String iban;
 	protected double saldo;
-	protected static final double INTERES_BASICO = 0.015;
+	//Si es general para todos es statico
+	private static final double INTERES_BASICO = 0.015;
+	private double interesAnualBasico;
 
 	public CuentaBancaria(String iban, double saldo) {
 		this.iban = iban;
 		this.saldo = saldo;
+		this.interesAnualBasico = INTERES_BASICO;
 	}
 
 	// Setters y getters
+	
+	public double getInteresAnualBasico() {
+		return interesAnualBasico;
+	}
 
 	/**
 	 * @return the iban
 	 */
 	public String getIban() {
 		return iban;
-	}
-
-	/**
-	 * @param iban the iban to set
-	 */
-	public void setIban(String iban) {
-		this.iban = iban;
 	}
 
 	/**
@@ -51,26 +51,32 @@ public abstract class CuentaBancaria {
 	public void retirar(double cantidad) {
 		if (cantidad > 0 && saldo >= cantidad) {
 			saldo -= cantidad;
-			System.out.println("Retirada realizada con éxito.");
+			System.out.println("Has returado " + cantidad + "€");
 		} else {
 			System.out.println("Error: No se ha podido realizar la operación.");
 		}
 	}
 
 	public void traspasar(CuentaBancaria destino, double cantidad) {
-		if (this.saldo >= cantidad) {
-			this.retirar(cantidad);
-			destino.ingresar(cantidad);
-			System.out.println("Traspaso realizado con éxito.");
+		if (destino instanceof CuentaBancaria) {
+			if (this.saldo >= cantidad) {
+				destino.saldo += cantidad;
+				this.saldo -= cantidad;
+				System.err.println("Operación Realizada");
+			} else {
+				System.out.println("No hay saldo suficiente");
+			}
 		} else {
-			System.out.println("No hay saldo suficiente para el traspaso.");
+			System.out.println("No se a podido realizar la operación");
 		}
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "IBAN: " + iban + " | Saldo: " + saldo + "€";
+		return "CuentaBancaria [iban=" + iban + ", saldo=" + saldo + ", interesAnualBasico=" + interesAnualBasico + "]";
 	}
 
-	public abstract void calcularIntereses();
+	public abstract void calcularInteres();
 }

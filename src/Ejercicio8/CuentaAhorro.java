@@ -1,31 +1,24 @@
 package Ejercicio8;
 
 public class CuentaAhorro extends CuentaBancaria {
-	private static final double SALDO_MINIMO = 1000.0;
+
+	private final double SALDO_MINIMO = 100;
 
 	public CuentaAhorro(String iban, double saldo) {
 		super(iban, saldo);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void calcularIntereses() {
-		double interesAplicado;
-
-		if (saldo < SALDO_MINIMO) {
-			// Si no llega al mínimo, interés es la mitad del básico
-			interesAplicado = INTERES_BASICO / 2;
+	public void calcularInteres() {
+		/*
+		if (this.getSaldo() < SALDO_MINIMO) {
+			this.setSaldo(this.getSaldo() * (this.getInteresAnualBasico() / 2) + this.getSaldo());
+			return this.getSaldo() * (this.getInteresAnualBasico() / 2);
 		} else {
-			// Si lo supera, el interés es el doble
-			interesAplicado = INTERES_BASICO * 2;
+			return this.getSaldo() * (this.getInteresAnualBasico() * 2);
 		}
-
-		double intereses = saldo * interesAplicado;
-		saldo += intereses;
-		System.out.println("Intereses aplicados a Cuenta Ahorro: " + intereses + "€");
+		*/
 	}
 
-	@Override
-	public String toString() {
-		return "Cuenta Ahorro " + super.toString() + " Mínimo para premio: " + SALDO_MINIMO + "€";
-	}
 }
