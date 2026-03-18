@@ -1,34 +1,22 @@
 package Ejercicio9;
 
 public class Empleado {
-	private final String nombre;
-	private final String dni;
 
+	private final String nombre, dni;
 	private double sueldoBruto;
 	private int edad;
-	private String telefono;
-	private String direccion;
+	private String telefono, direccion;
 
-	public Empleado(String nombre, String dni, double sueldoBruto) {
+	/**
+	 * 
+	 * @param nombre
+	 * @param dni
+	 * @param sueldoB
+	 */
+	public Empleado(String nombre, String dni, double sueldoB) {
 		this.nombre = nombre;
 		this.dni = dni;
-		this.sueldoBruto = sueldoBruto;
-	}
-
-	public double calcularSueldoNeto() {
-		if (this.sueldoBruto < 12000){
-			return  this.sueldoBruto - (this.sueldoBruto *0.2 /12); 
-		} else if((this.sueldoBruto >=12000) && (this.sueldoBruto <25000)){
-			return this.sueldoBruto - this.sueldoBruto *0.3;
-		}else
-			return this.sueldoBruto - this.sueldoBruto *0.4;
-	}
-
-	@Override
-	public String toString() {
-		return "EMPLEADO -> Nombre: " + nombre + " | DNI: " + dni + " | Sueldo Bruto: " + sueldoBruto + "€"
-				+ " | Sueldo Neto: " + calcularSueldoNeto() + "€" + " | Edad: " + (edad == 0 ? "N/D" : edad)
-				+ " | Tel: " + (telefono == null ? "N/D" : telefono);
+		this.sueldoBruto = sueldoB;
 	}
 
 	/**
@@ -36,6 +24,13 @@ public class Empleado {
 	 */
 	public double getSueldoBruto() {
 		return sueldoBruto;
+	}
+
+	/**
+	 * @return the dni
+	 */
+	public String getDni() {
+		return dni;
 	}
 
 	/**
@@ -94,11 +89,19 @@ public class Empleado {
 		return nombre;
 	}
 
-	/**
-	 * @return the dni
-	 */
-	public String getDni() {
-		return dni;
+	@Override
+	public String toString() {
+		return "Empleado [nombre=" + nombre + ", dni=" + dni + ", sueldoBruto=" + sueldoBruto + ", edad=" + edad
+				+ ", telefono=" + telefono + ", direccion=" + direccion + "]";
+	}
+
+	public double calculaSueldoNeto() {
+		if (this.sueldoBruto < 12000)
+			return (this.sueldoBruto - this.sueldoBruto * 0.2) / 12;
+		else if (this.sueldoBruto <= 25000)
+			return (this.sueldoBruto - this.sueldoBruto * 0.3) / 12;
+		else
+			return (this.sueldoBruto - this.sueldoBruto * 0.4) / 12;
 	}
 
 }

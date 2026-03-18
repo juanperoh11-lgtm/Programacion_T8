@@ -1,24 +1,61 @@
 package Ejercicio9;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Empresa miEmpresa = new Empresa("Tech Corp", "B12345678");
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
 
-        Empleado emp1 = new Empleado("Ana", "12345678A", 1000);
-        Empleado emp2 = new Empleado("Luis", "87654321B", 2200);
+		Empresa emp = new Empresa("Coca-Cola", "11113k", "91213423", "C/A");
 
-        miEmpresa.añadirEmpleado(emp1);
-        miEmpresa.añadirEmpleado(emp2);
+		int op;
+		do {
+			menu();
+			op = sc.nextInt();
+			sc.nextLine();
+			switch (op) {
+			case 1:
+				System.out.println("Introduce el dni del empleado");
+				String dni = sc.nextLine();
+				System.out.println("Introduce el nombre");
+				String nombre = sc.nextLine();
+				System.out.println("Introduce el sueldo bruto");
+				double sb = sc.nextDouble();
+				emp.anadirEmpleado(new Empleado(nombre, dni, sb));
+				break;
+			case 2:
+				System.out.println("Introduce el dni del empleado a borrar");
+				emp.borrarEmpleado(sc.nextLine());
+				break;
+			case 3:
+				emp.mostrarInfoTodosLosEmpleados();
+				break;
+			case 4:
+				emp.mostrarDniSueldoBrutoYNetoDeTodos();
+				break;
+			case 5:
+				System.out.println(emp.calculaSumaTodosLosSueldosBrutosEmpleados());
+				break;
+			case 6:
+				System.out.println(String.format("%.2f", emp.calculaSumaTotalSueldoNetoTodosLosEmpleados()));
+				break;
+			case 7:
+				System.out.println("saliendo");
+				break;
+			default:
+				System.out.println("Opción no válida");
+			}
+		} while (op != 7);
 
-        System.out.println("LISTADO COMPLETO:");
-        miEmpresa.mostrarTodosLosEmpleados();
+	}
 
-        System.out.println("\nLISTADO RESUMIDO:");
-        miEmpresa.mostrarSueldosResumidos();
+	private static void menu() {
 
-        System.out.println("\nTOTALES:");
-        System.out.println("Total Brutos: " + miEmpresa.calcularSumaBrutos() + "€");
-        System.out.println("Total Netos: " + miEmpresa.calcularSumaNetos() + "€");
-    }
+		System.out.println("1. Introduce empleado\n2. Borra empleado\n3. Mostrar todos\n4. Mostrar DNI,SB y SN\n5. "
+				+ "Suma total sueldos brutos\n6. Suma total sueldos netos\n7. Salir");
+
+	}
+
 }
