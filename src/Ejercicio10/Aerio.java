@@ -22,13 +22,13 @@ public class Aerio extends Vehiculo {
 	    for (int i=0; i < 4; i++) {
 	        //Miramos si los cuatro primeros caracteres son dígitos
 	        Character c = matricula.charAt(i);
-	        if (!(Character.isDigit(matricula.charAt(i))))
+	        if ((Character.isDigit(matricula.charAt(i))))
 	            return false;
 	    }
 	    
 	    for(int i=4; i < matricula.length(); i++) {
 	        Character c = matricula.charAt(i);
-	        if ((Character.isDigit(matricula.charAt(i))))
+	        if (!(Character.isDigit(matricula.charAt(i))))
 	            return false;
 	    }
 
